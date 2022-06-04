@@ -39,7 +39,7 @@
         <!--Fin:caja-->
         <section id="infoTarjetas" class="mt-3">
             <div class="row">
-                <div class="col-md-4 col-12">
+                <div class="col-md-4 col-12" id="tjt">
                     <div class="card color_tarjeta_uno text-white">
                         <div class="card-body text-center">
                             <h5 class="card-title">TARJETAS EN INVENTARIO</h5>
@@ -51,14 +51,14 @@
                     <div class="card color_tarjeta_dos text-white">
                         <div class="card-body text-center">
                             <h5 class="card-title">TOTAL VENTAS</h5>
-                            <p class="card-text h4">$25.000</p>
+                            <p class="card-text h4" id="totales">0.0</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-12">
                     <div class="card color_tarjeta_uno text-white p-3">
                         <div class="card-body text-center">
-                            <a href="#" class="boton_ventas p-3 rounded-3"><i
+                            <a href="#" class="boton_ventas p-3 rounded-3" data-bs-toggle="modal" data-bs-target="#saveVenta"><i
                                     class="fa-solid fa-comments-dollar"></i> vender tarjetas</a>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="card p-2">
                         <img src="./src/img/cr1.png" class="card-img-top img-opciones" alt="caja opcines">
                         <div class="card-body">
-                            <a href="#" class="btn boton-color-opciones w-100">Cerrar Caja</a>
+                            <a href="#" class="btn boton-color-opciones w-100" id="cerrarC">Cerrar Caja</a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <div class="card p-2">
                         <img src="./src/img/inventario.png" class="card-img-top img-opciones" alt="caja opcines">
                         <div class="card-body">
-                            <a href="#" class="btn boton-color-opciones w-100">Adicionar inventario</a>
+                            <a href="#" class="btn boton-color-opciones w-100" id="addInventario">Adicionar inventario</a>
                         </div>
                     </div>
                 </div>
@@ -123,6 +123,42 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn boton-color-opciones"  id="vTarjeta">Grabar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!--modal venta usuario-->
+         <div class="modal fade" id="saveVenta" tabindex="-1" aria-labelledby="saveVentaLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="saveVentaLabel">Registrar Venta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                       <div class="row">
+                            <div class="col-md-6">
+                               <select class="form-select" id="vtCantidad">
+                                <option value="">seleccione una cantidad</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                               </select>
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control" type="number" placeholder="valor tarjeta" value="5000" id="vtValor">
+                            </div>
+                            <div class="col-md-6 mt-2">
+                                <input class="form-control" type="number" placeholder="cedula Usuario"  id="vtCedula">
+                            </div>
+                            <div class="col-md-6 mt-2">
+                                <input class="form-control" type="text" id="vtEmpleado" readonly>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn boton-color-opciones"  id="vtgVenta">Grabar</button>
                     </div>
                 </div>
             </div>
