@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +11,14 @@
     <link rel="stylesheet" href="./plugins/css/all.min.css">
 
 </head>
+
 <body>
     <!--inicio de la cabecera-->
     <header class="w-100 p-3">
         <div class="container-fluid">
-            <h1 class="h5">MEGABUS VENTA DE TARJETA ESTACIÓN LAGO</h1>
-            <img  src="./src/img/log1.png" alt="logo megabus" class="float-end">
-        </div> 
+            <h1 class="h5">MEGABUS VENTA DE TARJETA ESTACIÓN LAGO ID EMPLEADO <span id="empleado"></span></h1>
+            <img src="./src/img/log1.png" alt="logo megabus" class="float-end">
+        </div>
     </header>
     <!--Fin:header-->
     <main class="container">
@@ -26,7 +28,7 @@
                 <div class="row">
                     <div class="col-md-10">
                         <h2>SALDO DE CAJA ACTUALMENTE</h2>
-                        <p class="h2">$ 20.000</p>
+                        <p class="h2" id="saldo"></p>
                     </div>
                     <div class="col-md-2">
                         <img src="./src/img/cr1.png" alt="caja de saldo" class="img-fluid mt-1">
@@ -38,25 +40,26 @@
         <section id="infoTarjetas" class="mt-3">
             <div class="row">
                 <div class="col-md-4 col-12">
-                    <div class="card color_tarjeta_uno text-white" >
+                    <div class="card color_tarjeta_uno text-white">
                         <div class="card-body text-center">
-                          <h5 class="card-title">TARJETAS EN INVENTARIO</h5>
-                           <p class="card-text h4">5</p>
+                            <h5 class="card-title">TARJETAS EN INVENTARIO</h5>
+                            <p class="card-text h4" id="canTarjetas"></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-12">
                     <div class="card color_tarjeta_dos text-white">
                         <div class="card-body text-center">
-                          <h5 class="card-title">TOTAL VENTAS</h5>
-                           <p class="card-text h4">$25.000</p>
+                            <h5 class="card-title">TOTAL VENTAS</h5>
+                            <p class="card-text h4">$25.000</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-12">
                     <div class="card color_tarjeta_uno text-white p-3">
                         <div class="card-body text-center">
-                          <a href="http://" class="boton_ventas p-3 rounded-3"><i class="fa-solid fa-comments-dollar"></i> vender tarjetas</a>
+                            <a href="#" class="boton_ventas p-3 rounded-3"><i
+                                    class="fa-solid fa-comments-dollar"></i> vender tarjetas</a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +72,7 @@
                     <div class="card p-2">
                         <img src="./src/img/cr1.png" class="card-img-top img-opciones" alt="caja opcines">
                         <div class="card-body">
-                          <a href="#" class="btn boton-color-opciones w-100">Cerrar Caja</a>
+                            <a href="#" class="btn boton-color-opciones w-100">Cerrar Caja</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +80,7 @@
                     <div class="card p-2">
                         <img src="./src/img/man.png" class="card-img-top img-opciones" alt="caja opcines">
                         <div class="card-body">
-                          <a href="#" class="btn boton-color-opciones w-100">Registrar usuario</a>
+                            <a href="#" class="btn boton-color-opciones w-100" data-bs-toggle="modal" data-bs-target="#saveCliente">Registrar usuario</a>
                         </div>
                     </div>
                 </div>
@@ -85,12 +88,45 @@
                     <div class="card p-2">
                         <img src="./src/img/inventario.png" class="card-img-top img-opciones" alt="caja opcines">
                         <div class="card-body">
-                          <a href="#" class="btn boton-color-opciones w-100">Adicionar inventario</a>
+                            <a href="#" class="btn boton-color-opciones w-100">Adicionar inventario</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!--inicio de modales-->
+        <!--modal guardar cliente-->
+        <div class="modal fade" id="saveCliente" tabindex="-1" aria-labelledby="saveClienteLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="saveClienteLabel">Registrar Cliente</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                       <div class="row">
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" placeholder="Ingrese nombre Cliente" id="clNombre">
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control" type="number" placeholder="cédula del cliente" id="clCedula">
+                            </div>
+
+                            <div class="col-md-6 mt-2">
+                                <input class="form-control" type="text" placeholder="dirección" id="clDireccion">
+                            </div>
+                            <div class="col-md-6 mt-2">
+                                <input class="form-control" type="text" id="clEmpleado" readonly>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn boton-color-opciones"  id="vTarjeta">Grabar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="./plugins/js/popper.min.js"></script>
     <script src="./plugins/js/bootstrap.min.js"></script>
@@ -98,4 +134,5 @@
     <script src="./plugins/js/fontawesome.min.js"></script>
     <script src="./src/js/main.js"></script>
 </body>
+
 </html>
