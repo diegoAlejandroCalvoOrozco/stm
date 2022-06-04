@@ -1,0 +1,46 @@
+:root{
+    --color-uno: #004d25;
+    --color-dos: #669d3a;
+}
+
+header{
+    background-color: var(--color-uno);
+}
+header h1{
+    color: var(--color-dos);
+    font-weight: bold;
+}
+header img{
+    width: 5%;
+    margin-top: -50px;
+}
+#infoCaja img{
+    width: 50%;
+}
+.color_tarjeta_dos{
+    background-color: var(--color-dos);
+    font-weight: bold;
+}
+.color_tarjeta_uno{
+    background-color: var(--color-uno);
+    font-weight: bold;
+}
+.boton_ventas{
+    background-color: var(--color-dos);
+    text-decoration: none;
+    color: white;
+}
+.boton_ventas:hover{
+    color: var(--color-uno);
+}
+.img-opciones{
+    width: 100%;
+    height: 35vh;
+}
+.boton-color-opciones{
+    background-color: var(--color-uno);
+    color: white;
+}
+.boton-color-opciones:hover{
+    color: var(--color-dos);
+}
