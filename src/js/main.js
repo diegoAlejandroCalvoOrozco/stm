@@ -61,7 +61,11 @@ function inUser(){
             console.log("cargando..")
         },
         success: function (response){ 
-            console.log(response)  
+            if(response == "1"){
+                alert("usuario registrado");
+            }else{
+                alert("usuario no registrado");
+            }
         }
     })   
 }
@@ -96,14 +100,16 @@ function postGuardarVenta(cant, total, ceUser, idE, canInv){
         type: "post",
         data: dataUSer,
         beforeSend: function () {
-            console.log("cargando..")
+            console.log("cargando la venta..")
         },
         success: function (response){
             if(response == "1"){
                 alert("producto vendido y descontado del inventario");
                 setTimeout(dataUs, 500);
                 setTimeout(traerVenta, 500);
-            } 
+            }else{
+                console.log(response)
+            }
                
         }
     })   
