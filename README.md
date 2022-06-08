@@ -1,6 +1,6 @@
 reciban un cordial saludo
 
-estuve crendo na app movil no la pude subir directamente a GitHub por temas de suguridad de git entonces dejo el enlace a drive para su respectiva descargar
+estuve crendo una app movil no la pude subir directamente a GitHub por temas de suguridad de git entonces dejo el enlace a drive para su respectiva descargar
 
 https://drive.google.com/file/d/14MgfC-fvSqKkFhLbkn1vwHPX5VJsv7oY/view?usp=sharing
 
